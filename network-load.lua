@@ -37,7 +37,7 @@ local function chunkSend(...)
             send(table.unpack(data))
         end
  
-        io.write("File sent. Press CTRL+D for interrupt, Q for exit.\n\n")
+        io.write("File sent. Press CTRL+D for interrupt, Q for exit.\n")
     end
 end
  
@@ -88,7 +88,7 @@ local function parseArgs()
 end
  
 parseArgs()
-chunkSend("runCode", code)
+chunkSend("runCode", code, "true")
  
 while true do
     local evt = {event.pull()}
